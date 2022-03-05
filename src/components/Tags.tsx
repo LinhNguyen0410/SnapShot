@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { TagList } from "../styles/style";
-import classNames from "classnames";
-import { act } from "react-dom/test-utils";
+import React from "react";
+import { TagList, TagTitle } from "../styles/style";
 
 interface category {
   id: number;
@@ -10,23 +8,23 @@ interface category {
 const categories = [
   {
     id: 1,
-    name: "People",
+    name: "VietNam ",
   },
   {
     id: 2,
-    name: "City",
+    name: "Thailand ",
   },
   {
     id: 3,
-    name: "Sports",
+    name: "Singapore ",
   },
   {
     id: 4,
-    name: "Natural",
+    name: "China ",
   },
   {
     id: 5,
-    name: "Technology",
+    name: "Colombia ",
   },
 ];
 
@@ -36,13 +34,16 @@ function Tag({ onClickTag }: any) {
   };
 
   return (
-    <TagList>
-      {categories.map((item: category) => (
-        <li key={item.id} onClick={() => handleClickTag(item.name)}>
-          {item.name}
-        </li>
-      ))}
-    </TagList>
+    <>
+      <TagTitle>Where do you want to go 🌴...</TagTitle>
+      <TagList>
+        {categories.map((item: category) => (
+          <li key={item.id} onClick={() => handleClickTag(item.name)}>
+            {item.name}
+          </li>
+        ))}
+      </TagList>
+    </>
   );
 }
 

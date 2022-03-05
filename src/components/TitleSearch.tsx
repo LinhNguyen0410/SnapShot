@@ -8,7 +8,7 @@ interface Title{
 function TitleSearch({searchTerm} : Title) {
     return (
         <SearchText>
-            {searchTerm ? `${searchTerm} Image` : ``  }
+            {searchTerm ? `${searchTerm} Pictures` : ``  }
         </SearchText>
     );
 }

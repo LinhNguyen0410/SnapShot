@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React, { useState } from "react";
 import { ButtonSubmit, TextField } from "../styles/style";
 
 function Input({ onChange }: any) {
@@ -8,13 +8,16 @@ function Input({ onChange }: any) {
   // event
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
     setValueSearch(e.currentTarget.value);
-    e.currentTarget.value.length > 0  ? setDisplayBtn(true) : setDisplayBtn(false);
+    e.currentTarget.value.length > 0
+      ? setDisplayBtn(true)
+      : setDisplayBtn(false);
   };
 
-  const  handleInputSubmit = () => {
-    if(onChange) onChange(valueSearch)
-    setValueSearch('')
-  }
+  const handleInputSubmit = () => {
+    if (onChange) onChange(valueSearch);
+    setValueSearch("");
+    setDisplayBtn(false);
+  };
 
   return (
     <>
