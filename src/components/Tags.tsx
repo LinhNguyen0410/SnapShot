@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { TagList } from "../styles/style";
+import classNames from "classnames";
+import { act } from "react-dom/test-utils";
 
 interface category {
   id: number;
@@ -28,10 +30,9 @@ const categories = [
   },
 ];
 
-function Tag({onClickTag}: any) {
-    
-  const handleClickTag = (value :string) => {
-      if(onClickTag) onClickTag(value)
+function Tag({ onClickTag }: any) {
+  const handleClickTag = (value: string) => {
+    if (onClickTag) onClickTag(value);
   };
 
   return (

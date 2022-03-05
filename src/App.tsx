@@ -43,10 +43,13 @@ function App() {
     setSearchTerm(value);
   };
 
+  const handleInputChange = (value :string) => {
+    setSearchTerm(value)
+  }
   return (
     <Container>
       <Logo />
-      <Input />
+      <Input onChange = {handleInputChange} />
       <Tag onClickTag={handleTagClick} />
       <TitleSearch searchTerm = {searchTerm} />
       <ImageList imageData={image} />

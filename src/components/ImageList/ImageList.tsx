@@ -3,8 +3,6 @@ import ImageItem from "./ImageItem";
 import { ImagesWrap } from "../../styles/style";
 
 function ImageList({ imageData }: any) {
-  console.log(imageData);
-
   return (
     <ImagesWrap>
       {imageData.map((image:object,index:number) => (

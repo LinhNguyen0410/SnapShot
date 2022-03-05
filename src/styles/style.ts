@@ -4,12 +4,13 @@ const primaryColor = "#000044";
 
 export const Container = styled.div`
   width: 95%;
-  background-color: #ccc;
+  background-color: #F5F5F5;
   margin: 50px auto;
-  padding: 25px 30px;
+  padding: 30px 30px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20px ;
 `;
 
 export const Title = styled.div`
@@ -58,6 +59,9 @@ export const TagList = styled.ul`
     background-color: ${primaryColor};
     padding: 5px 15px;
     cursor: pointer;
+    &:active{
+      opacity: 0.7 ;
+    }
   }
 `;
 
@@ -82,5 +86,6 @@ export const ImagesWrap = styled.div`
 export const Image = styled.img`
   width: 250px;
   height: 350px;
+  object-fit: cover ;
   border-radius: 10px ;
 `;
