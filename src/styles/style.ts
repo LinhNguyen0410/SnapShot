@@ -115,6 +115,7 @@ export const BoxModal = styled.div`
   border-radius: 10px;
   border: 10px solid #ccc;
   overflow: hidden;
+  z-index:99999999
 `;
 
 export const CloseButton = styled.span`
