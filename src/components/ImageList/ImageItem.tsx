@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BoxModal, CloseButton, Image, ImageModal } from "../../styles/style";
 
-
 function ImageItem({ imageItem }: any) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [url, setUrl] = useState<string>("");
@@ -12,16 +11,16 @@ function ImageItem({ imageItem }: any) {
   };
   return (
     <>
-     <div style={{overflow:'hidden', borderRadius:'10px'}}>
-     <Image
-        src={imageItem.urls.full}
-        onClick={() => handleImageClick(imageItem.urls.full)}
-      />
-     </div>
+      <div style={{ overflow: "hidden", borderRadius: "10px" }}>
+        <Image
+          src={imageItem.urls.full}
+          onClick={() => handleImageClick(imageItem.urls.full)}
+        />
+      </div>
       {showModal && (
         <BoxModal>
           <CloseButton onClick={() => setShowModal(false)}>X</CloseButton>
-          <ImageModal src={url}/>
+          <ImageModal src={url} />
         </BoxModal>
       )}
     </>

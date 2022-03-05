@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { ButtonSubmit, TextField } from "../styles/style";
 
-function Input({ onChange }: any) {
+interface Props {
+  onChange: Function;
+}
+
+function Input({ onChange }: Props) {
   const [valueSearch, setValueSearch] = useState<string>("");
   const [displayBtn, setDisplayBtn] = useState<boolean>(false);
 

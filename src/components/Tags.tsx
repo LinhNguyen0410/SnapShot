@@ -28,7 +28,11 @@ const categories = [
   },
 ];
 
-function Tag({ onClickTag }: any) {
+interface Props {
+  onClickTag : Function
+}
+
+function Tag({ onClickTag }: Props) {
   const handleClickTag = (value: string) => {
     if (onClickTag) onClickTag(value);
   };
