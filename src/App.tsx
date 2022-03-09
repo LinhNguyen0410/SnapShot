@@ -1,13 +1,13 @@
+import imageApi from "@apis/imageApi";
+import ImageList from "@components/ImageList/ImageList";
+import Logo from "@components/Logo";
+import Input from "@components/Search";
+import Tag from "@components/Tags";
+import TitleSearch from "@components/TitleSearch";
+import { Container } from "@styles/style";
+import { AxiosResponse } from "axios";
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Input from "./components/Search";
-import Logo from "./components/Logo";
-import { Container } from "./styles/style";
-import Tag from "./components/Tags";
-import TitleSearch from "./components/TitleSearch";
-import ImageList from "./components/ImageList/ImageList";
-import imageApi from "./apis/imageApi";
-import { AxiosResponse } from "axios";
 
 function App() {
   const [image, setImage] = useState<AxiosResponse | [] | void>([]);

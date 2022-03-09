@@ -1,5 +1,5 @@
+import { ButtonSubmit, TextField } from "@styles/style";
 import React, { useState } from "react";
-import { ButtonSubmit, TextField } from "../styles/style";
 
 interface Props {
   onChange: Function;

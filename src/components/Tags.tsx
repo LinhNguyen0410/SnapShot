@@ -1,5 +1,5 @@
+import { TagList, TagTitle } from "@styles/style";
 import React from "react";
-import { TagList, TagTitle } from "../styles/style";
 
 interface category {
   id: number;

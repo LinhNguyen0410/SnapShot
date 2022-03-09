@@ -1,5 +1,5 @@
+import { SearchText } from '@styles/style';
 import React from 'react';
-import { SearchText } from '../styles/style';
 
 interface Title{
     searchTerm : string
