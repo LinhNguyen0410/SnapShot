@@ -11,6 +11,9 @@
       "@apis/*": [
         "apis/*"
       ],
+      "@recoilState/*": [
+        "recoilState/*"
+      ],
     }
   }
 }

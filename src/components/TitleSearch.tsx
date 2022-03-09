@@ -6,6 +6,7 @@ interface Title{
 }
 
 function TitleSearch({searchTerm} : Title) {
+    
     return (
         <SearchText>
             {searchTerm ? `${searchTerm} Pictures` : ``  }

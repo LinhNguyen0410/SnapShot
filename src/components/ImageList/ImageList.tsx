@@ -1,5 +1,5 @@
 import React from "react";
-import { ImagesWrap } from "../../styles/style";
+import { ImagesWrap } from "@styles/style";
 import ImageItem from "./ImageItem";
 
 function ImageList({ imageData }: any) {

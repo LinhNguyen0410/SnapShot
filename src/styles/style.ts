@@ -84,7 +84,7 @@ export const SearchText = styled.span`
 
 export const ImagesWrap = styled.div`
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -92,8 +92,8 @@ export const ImagesWrap = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 300px;
-  height: 350px;
+  width: 30rem;
+  height: 35rem;
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
@@ -104,16 +104,26 @@ export const Image = styled.img`
   }
 `;
 
+export const LikeButton = styled.div`
+ position: absolute;
+ bottom: 6px ;
+ right:10px ;
+ font-size :2rem;
+ color: #fff ;
+ cursor: pointer;
+`;
+
+
 export const BoxModal = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
-  height: 550px;
+  width: 55rem;
+  height: 55rem;
   background-color: #fff;
-  border-radius: 10px;
-  border: 10px solid #ccc;
+  border-radius: 1rem;
+  border: 1rem solid #ccc;
   overflow: hidden;
   z-index:99999999
 `;
@@ -127,11 +137,16 @@ export const CloseButton = styled.span`
   font-weight: 500;
   cursor: pointer;
   padding: 5px 10px;
-  border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 1.5rem;
 `;
 
 export const ImageModal = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+`;
+
+export const LikeTotal = styled.p`
+  margin-top: 3rem;
+  font-size:2rem
 `;

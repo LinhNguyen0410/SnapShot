@@ -6,6 +6,7 @@ const setting = {
       "@components": path.resolve(__dirname, "src/components"),
       "@styles": path.resolve(__dirname, "src/styles"),
       "@apis": path.resolve(__dirname, "src/apis"),
+      "@recoilState": path.resolve(__dirname, "src/recoilState"),
     },
   },
   jest: {
