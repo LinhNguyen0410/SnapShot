@@ -1,35 +1,45 @@
 import { atom, selector } from "recoil";
 
-interface LikeItem {
+interface LikedInterface {
   id: string;
   quantity: number;
 }
 // save state at here...........
 export const likeState = atom({
-  key: "Like List",
+  key: "Liked List",
   default: [],
 });
 
 export const totalLiked = selector({
-  key: "Increase Liked",
+  key: "Get Liked List",
   get: ({ get }) => {
-    const likedList: any = get(likeState);
-    return likedList.length;
+    
+    const likedList: object[] = get(likeState);
+    return likedList.reduce((total:number,likeItem :any) => {
+      return total += (likeItem.quantity)
+    },0);
   },
 });
 
-
-// this func nhận vào list đã thích hiện tại và return ds đã thích mới nhất...
-export const addToLikedList = (currentListLiked: any[], newLiked: any) => {
+// this func nhận vào list đã thích hiện tại + id image moi like => return ds đã thích mới nhất...
+export const addToLikedList = (currentListLiked: any[], newLiked: string) => {
   const newListLiked: any = [...currentListLiked];
-  const foundIndex = currentListLiked.findIndex(item => item.id === newLiked.id);
-  
 
- if(foundIndex <=0){
-  newListLiked.push({
-    id: newLiked.id,
-    quantity: 1,
-  });
+  const foundIndex = currentListLiked.findIndex((item) => item.id === newLiked);
+
+  if (foundIndex <= 0) {
+    newListLiked.push({
+      id: newLiked,
+      quantity: 1,
+    });
+  }
   return newListLiked;
- }
+};
+
+export const handleUnliked = (
+  currentListLiked: any[],
+  idUnliked: string
+) => {
+  const newListLiked: any = [...currentListLiked];
+  return newListLiked.filter((image: LikedInterface) => image.id !== idUnliked);
 };

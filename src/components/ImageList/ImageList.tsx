@@ -7,7 +7,7 @@ function ImageList({ imageData }: any) {
     <>
       <ImagesWrap>
         {imageData.map((image: object, index: number) => (
-          <ImageItem key={index} imageItem={image} />
+          <ImageItem key={index} imageItem={image} imageData = {imageData} />
         ))}
       </ImagesWrap>
     </>

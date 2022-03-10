@@ -1,4 +1,4 @@
-import { addToLikedList, likeState } from "@recoilState/likeState";
+import { addToLikedList, handleUnliked, likeState } from "@recoilState/likeState";
 import {
   BoxModal,
   CloseButton,
@@ -7,27 +7,33 @@ import {
   LikeButton
 } from "@styles/style";
 import React, { useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
+
 
 function ImageItem({ imageItem }: any) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [url, setUrl] = useState<string>("");
   const [like, setLike] = useState<boolean>(false);
 
-  // when like => set into liked list
   const [likedList, setLikedList] = useRecoilState(likeState);
 
+  // when like => set into liked list
+  const handleClickLike = (idLike: string) => {
+    setLike(true)
 
-  const handleClickLike = (imageItem: any) => {
-    setLike(!like);
-    const newLike = addToLikedList(likedList, imageItem);
+    const newLike = addToLikedList(likedList, idLike);
     setLikedList(newLike);
   };
 
-  const handleClickUnLike = () => {
-    setLike(!like);
+  // when unlike => filter and ignore image unliked get out liked list..
+  const handleClickUnLike = (idUnLike: string) => {
+    setLike(false);
+
+    const newLikedList = handleUnliked(likedList, idUnLike)
+    setLikedList(newLikedList);
   };
 
+  // show modal
   const handleImageClick = (url: string) => {
     setUrl(url);
     setShowModal(true);
@@ -49,12 +55,12 @@ function ImageItem({ imageItem }: any) {
 
         {/* toggle like icon */}
         {like ? (
-          <LikeButton onClick={handleClickUnLike}>
+          <LikeButton onClick={() => handleClickUnLike(imageItem.id)}>
             <i className="fa-solid fa-heart liked"></i>
           </LikeButton>
         ) : (
-          <LikeButton onClick={() => handleClickLike(imageItem)}>
-            <i className="fa-regular fa-heart "></i>
+          <LikeButton onClick={() => handleClickLike(imageItem.id)}>
+            <i className="fa-regular fa-heart"></i>
           </LikeButton>
         )}
         {/* toggle like icon */}
